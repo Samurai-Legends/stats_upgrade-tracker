@@ -1,0 +1,10 @@
+.progressCircle > div > span    {
+    color: white !important;
+    animation: blink 4s ease-in-out infinite;
+}
+
+@keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }

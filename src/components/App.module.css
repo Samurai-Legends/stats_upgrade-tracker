@@ -1,0 +1,40 @@
+.container {
+    align-items: center;
+    background-image: url('../assets/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+}
+
+.container > h1,h2 {
+    padding: 0 20px;
+    text-align: center;
+}
+
+.container > h1 {
+    color: white;
+    font-family: 'Vollkorn', serif;
+    font-size: 4em;
+    margin: 0;
+}
+
+.container > h2 {
+    color: #bbbbbb;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 2em;
+    font-style: italic;
+    font-weight: 200;
+    margin-bottom: 30px;
+    text-transform: lowercase;
+}
+
+@media (max-width: 400px) {
+    .container > h2 {
+       font-size: 1.5em
+    }
+}
