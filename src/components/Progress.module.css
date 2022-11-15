@@ -1,10 +1,41 @@
-.progressCircle > div > span    {
-    color: white !important;
-    animation: blink 4s ease-in-out infinite;
+.progressCircle > div > span {
+  animation: blink 4s ease-in-out infinite;
+  color: white !important;
+}
+
+.display {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 100px 0;
+  width: 90vw;
+}
+
+.display > div {
+  align-items: top;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100px;
+}
+
+.display > div > img {
+  border: 2px solid white;
+  width: inherit;
+}
+
+.display > div > span {
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  position: absolute;
+  z-index: 100;
 }
 
 @keyframes blink {
-    50% {
-      opacity: 0;
-    }
+  50% {
+    opacity: 0;
   }
+}

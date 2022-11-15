@@ -22,6 +22,9 @@ function Progress() {
         setActualGenerated(generated);
     }, []);
 
+    /** A variable that gets the last 9 nfts */
+    const lastNfts = useMemo(() => actualGenerated.slice(actualGenerated.length - 10, actualGenerated.length - 1).reverse(), [actualGenerated])
+
     /** A variable that calculates the percentage based on the actual generated nfts compared to their maximum */
     const percentage = useMemo(() => Math.round((100 / 500) * actualGenerated.length), [actualGenerated]);
 
@@ -35,15 +38,26 @@ function Progress() {
         return () => clearInterval(interval);
     }, [getActualGenerated]);
 
+
     return (
-        <ProgressBar
-            type="circle"
-            percent={percentage}
-            strokeColor="#ffddae"
-            trailColor="rgba(255,221,174,0.2)"
-            width={width}
-            className={styles.progressCircle}
-        />
+        <>
+            <ProgressBar
+                type="circle"
+                percent={percentage}
+                strokeColor="#ffddae"
+                trailColor="rgba(255,221,174,0.2)"
+                width={width}
+                className={styles.progressCircle}
+            />
+            <div className={styles.display}>
+                {lastNfts.map(n => (
+                    <div key={n.id}>
+                        <span>{n.id}</span>
+                        <img src={n.image} alt={n.id} />
+                    </div>
+                ))}
+            </div>
+        </>
     );
 }
 
